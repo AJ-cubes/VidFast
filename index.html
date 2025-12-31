@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>VidFast Redirect</title>
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <title>VidFast Redirect</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>VidFast Redirect Service</h1>
-  <div id="message">Checking URL...</div>
-  <div class="split-button" style="display:none;" id="redirectContainer">
+<div id="autoToggleContainer">
+    <label class="switch">
+        <input type="checkbox" id="autoToggle">
+        <span class="slider"></span>
+    </label>
+    <span id="autoLabel">Auto‑redirect</span>
+</div>
+<h1>VidFast Redirect Service</h1>
+<div id="message">Checking URL...</div>
+<div class="split-button" style="display:none;" id="redirectContainer">
     <button id="redirectBtn" class="main-btn">Redirect</button>
     <button class="dropdown-btn">▼</button>
     <div class="dropdown-content" id="mirrorList"></div>
-  </div>
-  <button id="backBtn" style="display:none;">Go Back</button>
-  <script src="/script.js"></script>
+</div>
+<button id="backBtn" style="display:none;">Go Back</button>
+<script src="/script.js"></script>
 </body>
 </html>
