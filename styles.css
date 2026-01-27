@@ -124,17 +124,22 @@ button:hover {
     }
 }
 
-#backBtn {
+#findBtn {
     margin-top: 30px;
     padding: 10px 20px;
-    background-color: #666;
+    background: linear-gradient(
+            to right,
+            #90cea1 0%,
+            #3cbec9 56%,
+            #00b3e5 100%
+    );
     color: white;
     border-radius: var(--radius);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     transition: background-color var(--transition), transform var(--transition);
 }
 
-#backBtn:hover {
+#findBtn:hover {
     background-color: #444;
     transform: translateY(-1px);
 }

@@ -1,6 +1,6 @@
 const path = window.location.pathname
 const message = document.getElementById("message")
-const backBtn = document.getElementById("backBtn")
+const findBtn = document.getElementById("findBtn")
 const redirectContainer = document.getElementById("redirectContainer")
 const redirectBtn = document.getElementById("redirectBtn")
 const dropdownBtn = document.querySelector(".dropdown-btn")
@@ -18,16 +18,14 @@ const mirrors = [
 ]
 
 function handleMovie(p) {
-    const match = p.match(/^\/movie\/(\d+)-/)
-    if (match) {
-        const id = match[1]
-        return mirrors.map(m => `https://${m}/movie/${id}?autoplay=true`)
-    }
-    return null
+    const match = p.match(/^\/movie\/(\d+)(?:-[^/]+)?/)
+    if (!match) return null
+    const id = match[1]
+    return mirrors.map(m => `https://${m}/movie/${id}?autoplay=true`)
 }
 
 function handleTV(p) {
-    const match = p.match(/^\/tv\/(\d+)-[^/]+(?:\/season\/(\d+))?(?:\/episode\/(\d+))?/)
+    const match = p.match(/^\/tv\/(\d+)(?:-[^/]+)?(?:\/season\/(\d+))?(?:\/episode\/(\d+))?/)
     if (!match) return null
     const id = match[1]
     const season = match[2] || "1"
@@ -71,15 +69,16 @@ if (targets) {
             mirrorList.classList.remove("show")
         }
     })
-    autoToggle.addEventListener("change", () => {
-        const enabled = autoToggle.checked
-        localStorage.setItem("autoRedirect", enabled ? "true" : "false")
-        if (enabled) {
-            window.location.href = targets[0]
-        }
-    })
 } else {
     message.textContent = "Error: Invalid TMDB URL"
-    backBtn.style.display = "inline-block"
-    backBtn.onclick = () => history.back()
+    findBtn.style.display = "inline-block"
+    findBtn.onclick = () => window.location.href = "https://themoviedb.org/"
 }
+
+autoToggle.addEventListener("change", () => {
+    const enabled = autoToggle.checked
+    localStorage.setItem("autoRedirect", enabled ? "true" : "false")
+    if (enabled && targets) {
+        window.location.href = targets[0]
+    }
+})
