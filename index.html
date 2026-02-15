@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>VidFast Redirect</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link href="/styles.css" rel="stylesheet">
+    <link href="https://vidfast.pro/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
 <div id="autoToggleContainer">
     <label class="switch">
-        <input type="checkbox" id="autoToggle">
+        <input id="autoToggle" type="checkbox">
         <span class="slider"></span>
     </label>
-    <span id="autoLabel">Auto‑redirect</span>
+    <span id="autoLabel">Auto‑redirect (latest)</span>
 </div>
 <h1>VidFast Redirect Service</h1>
 <div id="message">Checking URL...</div>
-<div class="split-button" style="display:none;" id="redirectContainer">
-    <button id="redirectBtn" class="main-btn">Redirect</button>
-    <button class="dropdown-btn">▼</button>
+<div class="split-button" id="redirectContainer" style="display:none;">
+    <button class="main-btn" id="redirectBtn">Redirect</button>
+    <button class="dropdown-btn"><span class="rotate-text">▶</span></button>
     <div class="dropdown-content" id="mirrorList"></div>
 </div>
 <button id="findBtn" style="display:none;">Find Movies</button>

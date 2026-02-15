@@ -2,7 +2,7 @@
     --primary: #0077cc;
     --primary-hover: #005fa3;
     --radius: 6px;
-    --transition: 0.25s ease;
+    --transition: 0.5s ease;
 }
 
 @media (prefers-color-scheme: light) {
@@ -81,6 +81,17 @@ button:hover {
     border-bottom-right-radius: var(--radius);
 }
 
+.rotate-text {
+    display: inline-block;
+    transition: transform var(--transition);
+    transform: rotate(0deg);
+    transform-origin: center;
+}
+
+.rotate-text.rotated {
+    transform: rotate(90deg);
+}
+
 .main-btn:hover,
 .dropdown-btn:hover {
     background-color: var(--primary-hover);
@@ -90,7 +101,7 @@ button:hover {
     position: absolute;
     top: calc(100% + 6px);
     left: 0;
-    min-width: 220px;
+    width: 100%;
     border-radius: var(--radius);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
     z-index: 1000;
@@ -140,7 +151,7 @@ button:hover {
 }
 
 #findBtn:hover {
-    background-color: #444;
+    transition: transform var(--transition);
     transform: translateY(-1px);
 }
 
