@@ -1,5 +1,4 @@
-// const path = window.location.pathname;
-const path = "/movie/12345-some-movie-title";
+const path = window.location.pathname;
 const message = document.getElementById("message");
 const findBtn = document.getElementById("findBtn");
 const redirectContainer = document.getElementById("redirectContainer");
